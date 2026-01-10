@@ -9,7 +9,7 @@
 
 python3Packages.buildPythonApplication (finalAttrs: {
   pname = "audible-cli";
-  version = "0.3.3";
+  version = "0.3.4";
   pyproject = true;
 
   src = fetchFromGitHub {
@@ -49,7 +49,8 @@ python3Packages.buildPythonApplication (finalAttrs: {
   postInstall = ''
     installShellCompletion --cmd audible \
       --bash <(source utils/code_completion/audible-complete-bash.sh) \
-      --zsh <(source utils/code_completion/audible-complete-zsh-fish.sh)
+      --fish <(source utils/code_completion/audible-complete-fish.sh) \
+      --zsh <(source utils/code_completion/audible-complete-zsh.sh)
   '';
 
   # upstream has no tests
